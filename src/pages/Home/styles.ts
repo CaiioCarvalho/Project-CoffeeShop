@@ -1,111 +1,88 @@
-import styled from "styled-components";
+import styled from 'styled-components'
 
-export const HomeContainer = styled.section`
-    display: flex;
-    margin: 5.75rem 0;
-    justify-content: space-between;
+import { mixins } from '../../styles/mixins'
 
-    img {
-        width: 29.75rem;
-        height: 22.5rem;
-    }
+export const Hero = styled.section`
+  position: relative;
 
+  img#hero-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    max-height: 544px;
+    width: 100vw;
+    object-fit: cover;
+  }
 `
 
-export const InfoHomeContainer = styled.div`
+export const HeroContent = styled.div`
+  max-width: 1160px;
+  padding: 92px 20px;
+  margin: 0 auto;
+
+  display: flex;
+  gap: 56px;
+  align-items: flex-start;
+  justify-content: space-between;
+
+  > div {
     display: flex;
     flex-direction: column;
-    gap: 1rem;
-    max-width: 36rem;
-
-    h1 {
-        color: ${props => props.theme["base-title"]};
-        font-family: 'Baloo 2', sans-serif;
-        font-size: 3rem;
-        font-weight: 800;
-        line-height: 130%;
-    }
-
-    p{
-        color: ${props => props.theme["base-subtitle"]};
-        font-size: 1.25rem;
-        font-weight: 400;
-        line-height: 130%;
-    }
+    gap: 66px;
+  }
 `
 
-export const IconsHomeContainer = styled.div`
-    display: grid;
-    grid-template-columns: 18.45rem 22.375rem;
-    gap: 1rem;
-    margin-top: 4.13rem;
+export const Heading = styled.div`
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+
+  > h1 {
+    ${mixins.fonts.titleXL}
+    color: ${({ theme }) => theme.colors['base-title']}
+  }
+
+  > span {
+    ${mixins.fonts.textL}
+    color: ${({ theme }) => theme.colors['base-subtitle']}
+  }
 `
 
-export const IconsChangeble = styled.span`
+export const Info = styled.div`
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-row-gap: 20px;
+
+  > div {
     display: flex;
-    gap: 0.75rem;
-    justify-content: flex-start;
     align-items: center;
+    gap: 12px;
 
     svg {
-        display: flex;
-        padding: 0.5rem;
-        height: 2rem;
-        width: 2rem;
-        justify-content: center;
-        align-items: center;
-        border-radius: 50%;
-        font-size: 1rem;
-        color: ${props => props.theme.background};
+      padding: 8px;
+      border-radius: 999px;
     }
-    p {
-        color: ${props => props.theme["base-text"]};
-        font-weight: 400;
-        line-height: 130%;
-        width: 100%;
-    }
+  }
 `
 
-export const IconsChangebleCart = styled(IconsChangeble)`
-    svg{
-    background-color: ${props => props.theme["yellow-dark"]};
-    }
-`
+export const CoffeeList = styled.section`
+  max-width: 1160px;
+  padding: 32px 20px 150px;
+  margin: 0 auto;
 
-export const IconsChangebleTimer = styled(IconsChangeble)`
-svg{
-    background-color: ${props => props.theme["yellow"]};
-}
-`
+  display: flex;
+  flex-direction: column;
+  gap: 54px;
 
-export const IconsChangeblePackage = styled(IconsChangeble)`
-    svg{
-    background-color: ${props => props.theme["base-text"]};
-    }
-`
+  > h2 {
+    ${mixins.fonts.titleL}
+    color: ${({ theme }) => theme.colors['base-subtitle']}
+  }
 
-export const IconsChangebleCoffee = styled(IconsChangeble)`
-    svg{
-    background-color: ${props => props.theme["purple"]};
-    }
-`
-
-export const CaffeeContainer = styled.div`
-    margin-top: 9rem;
-    padding-bottom: 10rem;
-
-    div{
-        display: grid;
-        grid-template-columns: repeat( 4, 1fr);
-        gap: 2rem;
-    }
-
-    h1 {
-        margin-bottom: 3.38rem;
-        width: 100%;
-        font-family: 'Baloo 2', sans-serif;
-        font-size: 2rem;
-        font-weight: 800;
-        line-height: 130%; /* 2.6rem */
-    }
+  > div {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-row-gap: 40px;
+    grid-column-gap: 32px;
+  }
 `

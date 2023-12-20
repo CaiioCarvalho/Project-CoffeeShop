@@ -1,24 +1,25 @@
 import { createGlobalStyle } from 'styled-components'
+import { mixins } from './mixins'
 
 export const GlobalStyle = createGlobalStyle`
-    :root{
-        @import url('https://fonts.googleapis.com/css2?family=Baloo+2:wght@700;800&family=Roboto:wght@400;700&display=swap');
-
-    }
-
-    *{
-    margin: 0px;
-    padding: 0px;
+  * {
+    margin: 0;
+    padding: 0;
     box-sizing: border-box;
-    }
+  }
 
-    :focus {
-        outline: none;
-    }
+  body {
+    background: ${(props) => props.theme.colors.background};
+    color: ${(props) => props.theme.colors['base-text']};
+    -webkit-font-smoothing: antialiased;
+  }
 
-    input, button, textarea, body{
-        font-family: 'Roboto', sans-serif;
-        -webkit-font-smoothing: antialiased;
-    }
+  body, input, textarea, button {
+    ${mixins.fonts.textM};
+  }
 
+  button {
+    border: none;
+    cursor: pointer;
+  }
 `
